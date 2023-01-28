@@ -1,0 +1,19 @@
+@Library('commons')
+
+//import net.courtanet.jenkins.Utils
+
+//sayHello 'World'
+
+node() {
+    stage ('Checkout') {
+        //def utils = new Utils()
+        //checkout "${utils.gitTools()}"
+    }
+    stage ('Build') {
+        sh './gradlew build'
+    }
+    stage ('Post Build') {
+        String json = libraryResource 'net/courtanet/jenkins/request.json'
+        sh "curl -H 'Content-Type: application/json' -X POST -d '$json' ${acme.url}"
+    }
+}
