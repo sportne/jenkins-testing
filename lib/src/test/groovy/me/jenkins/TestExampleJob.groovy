@@ -13,9 +13,9 @@ class TestExampleJob extends BasePipelineTest {
 
    @Test
    void shouldExecuteWithoutErrors() {
-      exampleJob = loadScript('job/exampleJob.jenkins')
+      exampleJob = loadScript('job/ExampleJob.jenkins')
       exampleJob.execute()
-      //runScript('job/exampleJob.jenkins')
+      //runScript('job/ExampleJob.jenkins')
       printCallStack()
    }
 }

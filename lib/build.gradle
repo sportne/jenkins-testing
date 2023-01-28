@@ -15,13 +15,15 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
     maven { url 'https://repo.jenkins-ci.org/releases/' }
+    maven { url 'https://repo.jenkins-ci.org/public/' }
 }
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation group: "com.lesfurets", name: "jenkins-pipeline-unit", version: "1.9"
+    testImplementation group: "com.lesfurets", name: "jenkins-pipeline-unit", version: "1.+"
     testImplementation "junit:junit:4.+"
     implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.+'
+    implementation group: 'com.cloudbees', name: 'groovy-cps', version: '1.+'
 }
 
 test {
